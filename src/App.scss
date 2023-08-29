@@ -1,0 +1,14 @@
+//variables
+@use 'sass/base/variables';
+
+//base
+@import 'sass/base/reset';
+@import 'sass/base/utilities';
+
+
+//components
+@import 'sass/components/header';
+@import 'sass/components/footer';
+@import 'sass/components/catalogo';
+@import 'sass/components/carrito';
+@import 'sass/components/itemdetail'

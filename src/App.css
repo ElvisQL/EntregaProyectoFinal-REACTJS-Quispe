@@ -1,38 +1,328 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600&family=Roboto:wght@100&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+}
+header .h_sup {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: black;
+  height: auto;
+}
+header .h_sup img {
+  width: 250px;
+  height: auto;
+}
+header .h_sup nav {
+  width: 50%;
+}
+header .h_sup nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+}
+header .h_sup nav ul li .isactivelink {
+  color: #ba8a49;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+}
+header .h_sup nav ul li .isnotactivelink {
+  color: white;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+}
+header .h_sup nav ul li .isnotactivelink:hover {
+  color: #ba8a49;
+}
+header .h_sup .iconos_header {
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+header .h_sup .iconos_header .icon-link {
+  text-decoration: none;
+  color: white;
+}
+header .h_sup .iconos_header .icon-link .icon {
+  cursor: pointer;
+  font-size: 25px;
+}
+header .h_sup .iconos_header .icon-link .icon:hover {
+  color: #ba8a49;
+}
+header .h_inf {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  height: 50px;
+  align-items: center;
+  border-top: 2px solid #ba8a49;
+}
+header .h_inf input {
+  height: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer .footer-box {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  color: #eaeaea;
 }
+footer .footer-box nav {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+footer .footer-box nav .nav-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+footer .footer-box nav .nav-footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+footer .footer-box nav .nav-footer ul li span {
+  color: #eaeaea;
+  cursor: pointer;
+}
+footer .footer-box nav .nav-footer ul li span:hover {
+  color: #ba8a49;
+}
+footer .footer-box nav .nav-footer .list-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+footer .footer-box nav .nav-footer .list-icons span {
+  cursor: pointer;
+  color: #eaeaea;
+}
+footer .footer-box nav .nav-footer .list-icons .icon-footer {
+  font-size: 20px;
+}
+footer .footer-box nav .nav-footer .list-icons .icon-footer:hover {
+  color: #ba8a49;
+}
+footer .final-footer {
+  border-top: 2px #ba8a49 solid;
+  background-color: black;
+  text-align: center;
+  color: #eaeaea;
+}
+
+.ItemListContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+.ItemListContainer h1 {
+  margin-top: 10px;
+  font-family: "Inconsolata", monospace;
+}
+.ItemListContainer .ItemList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: auto;
+  gap: 2vw;
+  padding: 5% 10%;
+}
+.ItemListContainer .ItemList .card {
+  height: 400px;
+  box-shadow: 0px 2px 5px gray;
+  overflow: hidden;
+  transition: transform 0.5s;
+  width: 100%;
+  border-radius: 3%;
+}
+.ItemListContainer .ItemList .card img {
+  width: 100%;
+  height: 50%;
+  margin: 3px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.ItemListContainer .ItemList .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2px;
+  height: 50%;
+  border-top: 2px solid #ba8a49;
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+.ItemListContainer .ItemList .card .card-body h4 {
+  font-size: 20px;
+  font-weight: lighter;
+}
+.ItemListContainer .ItemList .card .card-body span {
+  font-weight: bold;
+}
+.ItemListContainer .ItemList .card .card-body .container-boton-card {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3%;
+}
+.ItemListContainer .ItemList .card .card-body .container-boton-card .link-boton {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: medium;
+  text-align: center;
+  width: 50%;
+  background-color: #ba8a49;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  transition: opacity 0.2s ease-in-out;
+  transition: transform 0.4s;
+}
+.ItemListContainer .ItemList .card .card-body .container-boton-card .link-boton:hover {
+  transform: scale(1.05);
+  color: black;
+}
+.ItemListContainer .ItemList .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #ba8a49;
+}
+
+main {
+  padding-top: 50px;
+  width: 90%;
+  margin: 10px auto;
+}
+main .without-products {
+  width: 70%;
+  margin: auto;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  box-shadow: 0 5px 20px grey;
+  gap: 5%;
+}
+main .without-products img {
+  height: 90px;
+  width: 90px;
+}
+main .without-products h1 {
+  font-size: 30px;
+}
+main .without-products .link-boton {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: medium;
+  text-align: center;
+  width: 25%;
+  background-color: #ba8a49;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  transition: opacity 0.2s ease-in-out;
+  transition: transform 0.4s;
+}
+main .without-products .link-boton:hover {
+  transform: scale(1.05);
+  color: black;
+}
+
+main {
+  padding: 5% 8%;
+}
+main .container-detail {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 4%;
+  border-radius: 3%;
+  box-shadow: 0px 2px 5px gray;
+}
+main .container-detail .container-imagen {
+  width: 45%;
+  height: 40%;
+  overflow: hidden;
+}
+main .container-detail .container-imagen img {
+  width: 500px;
+  height: 500px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .container-detail .description-product {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main .container-detail .description-product .description-bottom {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+main .container-detail .description-product .description-bottom .count {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+main .container-detail .description-product .description-bottom .count .count-body {
+  border-radius: 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+main .container-detail .description-product .description-bottom .count .count-body .boton-plus-less {
+  color: #ba8a49;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+main .container-detail .description-product .description-bottom .link-boton {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: medium;
+  text-align: center;
+  text-align: center;
+  width: 50%;
+  background-color: #ba8a49;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  transition: opacity 0.2s ease-in-out;
+  transition: transform 0.4s;
+}
+main .container-detail .description-product .description-bottom .link-boton:hover {
+  transform: scale(1.05);
+  color: black;
+}/*# sourceMappingURL=App.css.map */

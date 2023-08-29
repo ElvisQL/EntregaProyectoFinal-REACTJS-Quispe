@@ -1,0 +1,49 @@
+main{
+    padding-top: 50px;
+    width: 90%;
+    
+    
+    margin: 10px auto;
+    .without-products{
+    
+        width: 70%;
+        margin: auto;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        border-radius: 10%;
+        box-shadow: 0 5px 20px grey ;
+        gap: 5%;
+        img{
+            height: 90px;
+            width: 90px;
+    
+        }
+        h1{
+            font-size: 30px;
+        }
+        .link-boton{
+            text-decoration: none;
+            font-family: $font2;
+            font-size: medium;
+            text-align: center;
+    
+            width: 25%;
+            background-color: $naranja;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            transition: opacity 0.2s ease-in-out;
+            transition: transform 0.4s;
+            &:hover{
+                transform: scale(1.05);
+                color: black;
+            }
+        }
+    }
+}
+
+

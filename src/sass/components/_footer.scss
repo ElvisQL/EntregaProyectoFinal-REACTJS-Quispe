@@ -1,0 +1,70 @@
+footer {
+    
+    .footer-box{
+        background-color: black;
+        display: flex;
+        justify-content:space-around;
+        padding: 15px;
+        color:#eaeaea;
+        nav {
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            .nav-footer{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-around;
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 18px;
+                    li{
+                        
+                        span{
+                            color: #eaeaea;
+                            cursor: pointer;
+                            &:hover {
+                                color: $naranja;
+                            }
+                        }
+                    }
+
+                }
+                .list-icons{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 5px;
+                    
+                        span{
+                            cursor: pointer;
+                            color: #eaeaea;
+                        }
+                        
+                        .icon-footer{
+                            font-size: 20px;
+                            &:hover {
+                                color: $naranja;
+                            }
+                        }
+                        
+                    
+                        
+                }
+            }
+               
+
+        }
+    }
+    .final-footer{
+        border-top: 2px $naranja solid;
+        background-color: black;
+        text-align: center;
+        color: #eaeaea;
+    }
+}

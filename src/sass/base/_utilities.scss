@@ -1,0 +1,35 @@
+@mixin d-flex($direction,$justifify,$align-items,$align-content,$wrap,$gap){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifify;
+    align-items: $align-items;
+    flex-wrap: $wrap;
+    gap:$gap;
+    align-content: $align-content;
+}
+
+@mixin d-grid($columns,$rows,$areas,$gap,$auto-rows,$auto-columns) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-template-areas: $areas;
+    gap: $gap;
+    grid-auto-rows: $auto-rows;
+    grid-auto-columns: $auto-columns;
+}
+
+@mixin box-size ($height,$width,$padding,$margin){
+    height: $height;
+    width: $width;
+    padding: $padding;
+    $margin:$margin;
+}
+
+@mixin desing-text ($size, $family,$color,$line-height,$weight,$style){
+    font-size: $size;
+    font-family: $family;
+    color:$color;
+    line-height: $line-height;
+    font-weight: $weight;
+    font-style: $style;
+}
