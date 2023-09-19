@@ -1,16 +1,12 @@
-import { useState } from "react";
-import { BiSearch } from "react-icons/bi";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import { BsPersonCircle, BsCart } from "react-icons/bs";
 import { NavLink, Link } from "react-router-dom";
 import brand from "../assets/logo.png";
 import "../sass/components/_header.scss";
 
 const Header = () => {
-  const [search, setSearch] = useState(false);
-
-  const desplegar = () => {
-    setSearch(!search);
-  };
+  const { calculoTotalProductos } = useContext(CartContext);
 
   return (
     <header>
@@ -64,22 +60,14 @@ const Header = () => {
         </nav>
         <div className="iconos_header">
           <Link className="icon-link">
-            <BiSearch onClick={desplegar} className="icon" />
-          </Link>
-          <Link className="icon-link">
             <BsPersonCircle className="icon" />
           </Link>
           <Link to={"/carrito"} className="icon-link">
             <BsCart className="icon" />
+            <span className="total-carrito">{calculoTotalProductos()}</span>
           </Link>
         </div>
       </div>
-
-      {search && (
-        <div className="h_inf">
-          <input type="text" />
-        </div>
-      )}
     </header>
   );
 };

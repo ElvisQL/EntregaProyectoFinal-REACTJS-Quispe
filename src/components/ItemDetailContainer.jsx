@@ -1,21 +1,29 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import ItemDetail from "./ItemDetail";
-import productos from "../products";
+import { Cargando } from "./Cargando";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const [product, setProducts] = useState({});
 
   useEffect(() => {
-    let nuevoProducto = productos.find((p) => p.id === parseInt(id));
-    setProducts(nuevoProducto);
+    const db = getFirestore();
+    const getProducto = async () => {
+      const q = doc(db, "productos", id);
+      const r = await getDoc(q);
+      const newProduct = { id: r.id, ...r.data() };
+      setIsLoading(false);
+      setProducts(newProduct);
+    };
+    getProducto();
   }, [id]);
 
   return (
     <div>
-      <ItemDetail producto={product}></ItemDetail>
+      {isLoading ? <Cargando /> : <ItemDetail producto={product}></ItemDetail>}
     </div>
   );
 };

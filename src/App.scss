@@ -1,5 +1,5 @@
 //variables
-@use 'sass/base/variables';
+@import 'sass/base/variables';
 
 //base
 @import 'sass/base/reset';
@@ -7,8 +7,11 @@
 
 
 //components
+
+@import 'sass/components/cargando';
 @import 'sass/components/header';
 @import 'sass/components/footer';
 @import 'sass/components/catalogo';
 @import 'sass/components/carrito';
-@import 'sass/components/itemdetail'
+@import 'sass/components/itemdetail';
+@import 'sass/components/checkout';

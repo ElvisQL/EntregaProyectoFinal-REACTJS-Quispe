@@ -1,86 +1,81 @@
-@import '../base/variables';
+@import "../base/variables";
 
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  .h_sup {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    .h_sup{
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: auto;
+    img {
+      width: 250px;
+      height: auto;
+    }
+
+    nav {
+      width: 50%;
+      ul {
+        list-style: none;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: black;
-        height: auto;
-        img {
-            width: 250px;
-            height: auto;
-        }
-
-        nav{
-            width: 50%;
-            ul{
-                list-style: none;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                margin-bottom: 0;
-                li {
-                    
-                    .isactivelink {
-                        color: $naranja;
-                        text-decoration: none;
-                        font-family: $font1;
-                        font-size: 20px;
-                        
-                    }
-                    .isnotactivelink {
-                        color: white;
-                        text-decoration: none;
-                        font-family: $font1;
-                        font-size: 20px;
-                        &:hover {
-                            color: $naranja;
-                        }
-                    }
-                    
-                }
-
-            }
-        }
-        .iconos_header{
-            width: 15%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 0;
+        li {
+          .isactivelink {
+            color: $naranja;
+            text-decoration: none;
+            font-family: $font1;
+            font-size: 20px;
+          }
+          .isnotactivelink {
             color: white;
-            
-            .icon-link{
-                text-decoration: none;
-                color: white;
-                .icon {
-                    cursor: pointer;
-                    font-size: 25px;
-                    &:hover{
-                        color: $naranja;
-                    }
-                }
+            text-decoration: none;
+            font-family: $font1;
+            font-size: 20px;
+            &:hover {
+              color: $naranja;
             }
-            
-                
-            
+          }
         }
+      }
     }
-    .h_inf{
-        display: flex;
-        justify-content: center;
-        background-color: black;
-        height: 50px;
-        align-items: center;
-        border-top: 2px solid $naranja;
-        
-        input {
-            height: 15px;
+    .iconos_header {
+      width: 15%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      color: white;
+
+      .icon-link {
+        text-decoration: none;
+        color: white;
+        .icon {
+          cursor: pointer;
+          font-size: 25px;
+          &:hover {
+            color: $naranja;
+          }
         }
-       
+        .total-carrito {
+          margin-left: 10px;
+          color: white;
+        }
+      }
     }
-        
+  }
+  .h_inf {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 50px;
+    align-items: center;
+    border-top: 2px solid $naranja;
+
+    input {
+      height: 15px;
+    }
+  }
 }

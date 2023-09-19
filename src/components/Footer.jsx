@@ -1,6 +1,5 @@
 import { BsFacebook, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
-import brand from "../assets/logo.png"
-
+import brand from "../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -50,13 +49,13 @@ const Footer = () => {
               <BsFacebook className="icon-footer" />
               <span>Facebook</span>
 
-              <BsInstagram className="icon-footer"/>
+              <BsInstagram className="icon-footer" />
               <span>Instagram</span>
 
               <BsTwitter className="icon-footer" />
               <span>Twitter</span>
 
-              <BsLinkedin className="icon-footer"/>
+              <BsLinkedin className="icon-footer" />
               <span>Linkedin</span>
             </ul>
           </div>

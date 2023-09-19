@@ -1,24 +1,52 @@
 import ItemList from "../components/ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import productos from "../products";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+
+import { Cargando } from "./Cargando";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const { categoria } = useParams();
+  const { categoriaId } = useParams();
 
   useEffect(() => {
-    const filteredList = categoria
-      ? productos.filter((p) => p.categoria === categoria)
-      : productos;
-    setProducts(filteredList);
-  }, [categoria]);
+    const db = getFirestore();
+    const coleccion = collection(db, "productos");
+    const filtrado = categoriaId
+      ? query(coleccion, where("categoria", "==", categoriaId))
+      : coleccion;
+    getDocs(filtrado)
+      .then((response) => {
+        if (response.size > 0) {
+          setProducts(response.docs.map((p) => ({ id: p.id, ...p.data() })));
+          setIsLoading(false);
+        } else {
+          console.error("No se pudo encontrar los productos en la coleccion!");
+        }
+      })
+      .catch((e) => {
+        console.error("Error al obtener productos:", e);
+      });
+  }, [categoriaId]);
 
   return (
     <div className="ItemListContainer">
-      <h1>{categoria ? categoria.toUpperCase() : "CATALOGO"}</h1>
-      <ItemList productos={products}></ItemList>
+      {isLoading ? (
+        <Cargando></Cargando>
+      ) : (
+        <>
+          <h1>{categoriaId ? categoriaId.toUpperCase() : "CATALOGO"}</h1>
+          <ItemList productos={products}></ItemList>
+        </>
+      )}
     </div>
   );
 };
