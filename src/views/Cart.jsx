@@ -10,7 +10,7 @@ export default function Cart() {
   return cart.length === 0 ? (
     <main>
       <div className="without-products">
-        <img src="images/carritovacio.png" alt="" />
+        <img src="https://firebasestorage.googleapis.com/v0/b/proyectofinalreactjs-elvis.appspot.com/o/images%2Fcarritovacio.png?alt=media&token=971d2a0e-0dc2-406e-9293-9fec3721495c" alt="" />
         <h1>Carrito Vacio</h1>
         <span>Agregue productos al carrito</span>
         <Link className="link-boton" to={"/"}>
